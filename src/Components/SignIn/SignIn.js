@@ -41,7 +41,7 @@ const SignIn = () => {
                 userFirstName = userName1[0];
             })
             history.push("/");
-            toast.success(`Welcome Back ${userFirstName} to Planner!!`, {position: toast.POSITION.TOP_CENTER})
+            toast.success(`Welcome Back ${userFirstName} !!`, {position: toast.POSITION.TOP_CENTER})
         }
         catch(error){
             let error1 = error.message.split(":");

@@ -16,7 +16,7 @@ function App() {
 
   return (
     <Router>
-      <ValuesContext.Provider value={emailRef, passwordRef}>
+      <ValuesContext.Provider value={{emailRef, passwordRef}}>
       <Switch>
         <Route path="/signin">
           <SignIn />

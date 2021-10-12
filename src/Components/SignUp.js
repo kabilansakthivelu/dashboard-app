@@ -11,7 +11,7 @@ const SignUp = () => {
 
     const {emailRef, passwordRef} = useContext(ValuesContext);
 
-    const refUsername = useRef();
+    const usernameRef = useRef();
 
     const history = useHistory();
 
@@ -19,7 +19,7 @@ const SignUp = () => {
 
     const signUp = async(e) =>{
         e.preventDefault();
-        const username = refUsername.current.value;
+        const username = usernameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         if(username[0]=== " "){
@@ -62,7 +62,7 @@ const SignUp = () => {
 
             <div className="inputFieldDiv">
             <FaUser className="inputFieldIcon"/>
-            <input className="inputField" required type="text" name="username" id="username" placeholder="Username" ref={refUsername}/>
+            <input className="inputField" required type="text" name="username" id="username" placeholder="Username" ref={usernameRef}/>
             </div>
 
             <div className="inputFieldDiv">
