@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import Navbar from '../Navbar/Navbar';
 import SignIn from '../SignIn/SignIn';
 import {ValuesContext} from '../../App';
+import {BiTimeFive} from 'react-icons/bi';
 import './Home.css';
 
 const Home = () => {
@@ -22,11 +23,18 @@ const Home = () => {
                 <h1 className="boardHeader">Next Up</h1>
                 <hr className="headerDivider"/>
                 {nextUpTasks.map((task)=>{ 
+
+                    const time1 = task.time.split(" ");
+                    const time = time1[1] + " " + time1[0]
+
                     return (<div key={task.id} className="singleTask">
                         <h1 className="taskPriority">{task.priority}</h1>
-                        <h1>{task.taskName}</h1>
-                        <h1>{task.comments}</h1>
-                        <h1>{task.time}</h1>
+                        <h1 className="taskTitle">{task.taskName}</h1>
+                        <h1 className="taskComments">{task.comments}</h1>
+                        <div className="taskTime">
+                        <BiTimeFive/>
+                        <h1>{time}</h1>
+                        </div>
                     </div>)
                 })}
             </div>
