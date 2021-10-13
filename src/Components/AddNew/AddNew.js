@@ -1,12 +1,50 @@
-import React, {useContext} from 'react';
+import React, {useContext, useRef} from 'react';
 import Navbar from '../Navbar/Navbar';
 import SignIn from '../SignIn/SignIn';
 import {ValuesContext} from '../../App';
+import {useHistory} from 'react-router-dom';
+import {toast} from 'react-toastify';
+import {db, auth} from '../../firebase';
 import './AddNew.css';
 
 const AddNew = () => {
 
     const {user} = useContext(ValuesContext);
+
+    const refState = useRef();
+    const refPriority = useRef();
+    const refTaskName = useRef();
+    const refComments = useRef();
+
+    const history = useHistory();
+
+    const addTask = (e) =>{
+        e.preventDefault();
+        const state = refState.current.value;
+        const priority = refPriority.current.value;
+        const taskName = refTaskName.current.value;
+        const comments = refComments.current.value;
+        if(state === "null"){
+            toast.warning("Please select a state of your task", {position: toast.POSITION.RIGHT});
+        }
+        else if(priority === "null"){
+            toast.warning("Please give a priority to your task", {position: toast.POSITION.RIGHT});
+        }
+        else if(taskName[0] === " "){
+            toast.warning(`Please don't start your task name with "SPACE".`, {position: toast.POSITION.RIGHT});
+        }
+        else{
+            db.collection('userTasks').doc(auth.currentUser.uid).collection('tasks').add({
+                state,
+                priority,
+                taskName,
+                comments,
+                time: (new Date()).getTime().toString(),
+            })
+            history.push("/");
+            toast.success("Task created successfully !!", {position: toast.POSITION.RIGHT});
+        }
+        }
 
     return (
         <>
@@ -16,10 +54,10 @@ const AddNew = () => {
             <div className="HomePageContent">
             <p className="description">It always seems impossible until it's done. Planning is everything.</p>
             <h1 className="description">Add a new task</h1>
-            <form className="additionForm">
+            <form className="additionForm" onSubmit={addTask}>
                 <div className="inputFieldForm">
                 <label htmlFor="state" className="stateFieldLabel">State: </label>
-                <select required name="state" id="state" className="fieldInput">
+                <select required name="state" id="state" className="fieldInput" ref={refState}>
                     <option value="null">Please Select</option>
                     <option value="nextUp">Next Up</option>
                     <option value="inProgress">In Progress</option>
@@ -28,7 +66,7 @@ const AddNew = () => {
                 </div>
                 <div className="inputFieldForm">
                 <label htmlFor="priority" className="priorityFieldLabel">Priority:</label>
-                <select required name="priority" id="priority" className="fieldInput">
+                <select required name="priority" id="priority" className="fieldInput" ref={refPriority}>
                     <option value="null">Please Select</option>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
@@ -36,16 +74,17 @@ const AddNew = () => {
                 </select>
                 </div>
                 <div className="inputFieldForm">
-                <label htmlFor="title" className="titleFieldLabel">Title: &nbsp;</label>
-                <input required type="text" id="title" className="fieldInput"/>
+                <label htmlFor="title" className="titleFieldLabel">Task: &nbsp;</label>
+                <input required type="text" id="title" className="fieldInput" ref=
+                {refTaskName} placeholder="Enter the task name..."/>
                 </div>
                 <div className="inputFieldForm">
-                <label htmlFor="description" className="descriptionFieldLabel">Description: &nbsp;</label>
-                <textarea name="description" id="description" className="textAreaInput"></textarea>
+                <label htmlFor="description" className="descriptionFieldLabel">Comments: &nbsp;</label>
+                <textarea name="description" id="description" className="textAreaInput" ref={refComments} placeholder="Enter your comments here..."></textarea>
                 </div>
                 <div className="buttonSection">
                 <button className="individualButton">Save</button>
-                <button className="individualButton">Cancel</button>
+                <button className="individualButton" onClick={()=>{history.push("/")}}>Cancel</button>
                 </div>
             </form>
             </div>

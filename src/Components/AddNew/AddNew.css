@@ -1,11 +1,11 @@
 .additionForm{
-    @apply md:w-9/12 mx-auto border-2 border-gray-700 shadow-xl mt-10 p-2 md:p-4 rounded-lg bg-gray-200 pt-10 ml-0 md:mx-auto pl-6 
+    @apply md:w-9/12 md:pt-8 mx-auto border-2 border-gray-700 shadow-xl mt-10 p-2 md:p-4 rounded-lg bg-gray-200 pt-10 ml-0 md:mx-auto pl-6 
 }
 .inputFieldForm{
     @apply mb-4 md:flex md:flex-row md:items-center md:justify-center
 }
 .stateFieldLabel{
-    @apply text-black md:pr-20 font-semibold
+    @apply text-black md:pr-20 font-semibold 
 }
 .priorityFieldLabel{
     @apply text-black md:pr-16 font-semibold
@@ -14,13 +14,13 @@
     @apply text-black md:pr-20 font-semibold
 }
 .descriptionFieldLabel{
-    @apply text-black md:pr-7 mb-5 font-semibold 
+    @apply text-black md:pr-8 mb-5 font-semibold 
 }
 .fieldInput{
     @apply border-2 border-gray-400 rounded-md w-11/12 md:w-9/12 h-10 pl-2 mb-1 mt-2
 }
 .textAreaInput{
-    @apply border-2 border-gray-400 rounded-md w-11/12 md:w-9/12 h-20 mb-4 mt-2
+    @apply border-2 border-gray-400 rounded-md w-11/12 md:w-9/12 h-20 mb-4 mt-2 pl-2 pt-1
 }
 .buttonSection{
     @apply flex flex-col md:flex-row items-center justify-center md:space-x-3 mb-4 space-y-3 md:space-y-0
