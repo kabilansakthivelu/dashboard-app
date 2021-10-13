@@ -1,31 +1,31 @@
 .additionForm{
-    @apply w-9/12 mx-auto border-2 border-gray-700 shadow-xl mt-8 p-4 rounded-lg bg-gray-200 pt-10
+    @apply md:w-9/12 mx-auto border-2 border-gray-700 shadow-xl mt-10 p-2 md:p-4 rounded-lg bg-gray-200 pt-10 ml-0 md:mx-auto pl-6 
 }
 .inputFieldForm{
-    @apply mb-4 flex flex-col md:flex-row items-center justify-center
+    @apply mb-4 md:flex md:flex-row md:items-center md:justify-center
 }
 .stateFieldLabel{
-    @apply text-black pr-20 font-semibold
+    @apply text-black md:pr-20 font-semibold
 }
 .priorityFieldLabel{
-    @apply text-black pr-16 font-semibold
+    @apply text-black md:pr-16 font-semibold
 }
 .titleFieldLabel{
-    @apply text-black pr-20 font-semibold
+    @apply text-black md:pr-20 font-semibold
 }
 .descriptionFieldLabel{
-    @apply text-black pr-7 font-semibold
+    @apply text-black md:pr-7 mb-5 font-semibold 
 }
 .fieldInput{
-    @apply border-2 border-gray-400 rounded-md w-9/12 h-10 pl-2
+    @apply border-2 border-gray-400 rounded-md w-11/12 md:w-9/12 h-10 pl-2 mb-1 mt-2
 }
 .textAreaInput{
-    @apply border-2 border-gray-400 rounded-md w-9/12 h-20
+    @apply border-2 border-gray-400 rounded-md w-11/12 md:w-9/12 h-20 mb-4 mt-2
 }
 .buttonSection{
-    @apply flex flex-col md:flex-row items-center justify-center space-x-3
+    @apply flex flex-col md:flex-row items-center justify-center md:space-x-3 mb-4 space-y-3 md:space-y-0
 }
 .individualButton{
-    @apply border-2 border-gray-400 p-3 rounded-lg bg-white hover:bg-gray-100
-    hover:border-black hover:text-black
+    @apply border-2 border-gray-400 lg:p-3 p-2 rounded-lg bg-white hover:bg-gray-100
+    hover:border-black hover:text-black font-semibold w-20
 }

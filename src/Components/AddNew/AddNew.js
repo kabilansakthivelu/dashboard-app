@@ -14,6 +14,7 @@ const AddNew = () => {
         (<div>
             <Navbar/>
             <div className="HomePageContent">
+            <p className="description">It always seems impossible until it's done. Planning is everything.</p>
             <h1 className="description">Add a new task</h1>
             <form className="additionForm">
                 <div className="inputFieldForm">
