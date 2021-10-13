@@ -56,9 +56,21 @@ function App() {
     }
   },[user])
 
+  const nextUpTasks = tasks.filter((item)=>{
+    return item.state === "nextUp";
+  })
+
+  const inProgressTasks = tasks.filter((item)=>{
+    return item.state === "inProgress";
+  })
+
+  const completedTasks = tasks.filter((item)=>{
+    return item.state === "completed";
+  })
+
   return (
     <Router>
-      <ValuesContext.Provider value={{emailRef, passwordRef, user}}>
+      <ValuesContext.Provider value={{emailRef, passwordRef, user, nextUpTasks, inProgressTasks, completedTasks}}>
       <Switch>
         <Route path="/signin">
           <SignIn />

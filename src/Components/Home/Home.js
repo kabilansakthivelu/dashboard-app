@@ -6,7 +6,7 @@ import './Home.css';
 
 const Home = () => {
 
-    const {user} = useContext(ValuesContext);
+    const {user, nextUpTasks, inProgressTasks, completedTasks} = useContext(ValuesContext);
 
     return (
         <>
@@ -21,6 +21,14 @@ const Home = () => {
             <div className="individualBoard">
                 <h1 className="boardHeader">Next Up</h1>
                 <hr className="headerDivider"/>
+                {nextUpTasks.map((task)=>{ 
+                    return (<div key={task.id} className="singleTask">
+                        <h1 className="taskPriority">{task.priority}</h1>
+                        <h1>{task.taskName}</h1>
+                        <h1>{task.comments}</h1>
+                        <h1>{task.time}</h1>
+                    </div>)
+                })}
             </div>
             <div className="individualBoard">
                 <h1 className="boardHeader">In Progress</h1>
