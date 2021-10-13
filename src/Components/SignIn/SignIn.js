@@ -25,7 +25,7 @@ const SignIn = () => {
         history.push("/");
         const name = auth.currentUser.displayName.split(" ");
         const firstName = name[0];
-        toast.success(`Hi ${firstName}, Welcome to Planner !!`, {position: toast.POSITION.TOP_CENTER})
+        toast.success(`Hi ${firstName}, Welcome to Planner !!`, {position: toast.POSITION.TOP_RIGHT})
     }
 
     const explictSignIn = async(e) =>{
@@ -41,12 +41,12 @@ const SignIn = () => {
                 userFirstName = userName1[0];
             })
             history.push("/");
-            toast.success(`Welcome Back ${userFirstName} !!`, {position: toast.POSITION.TOP_CENTER})
+            toast.success(`Welcome Back ${userFirstName} !!`, {position: toast.POSITION.TOP_RIGHT})
         }
         catch(error){
             let error1 = error.message.split(":");
             let error2 = error1[1].split("(");
-            toast.error(error2[0], {position: toast.POSITION.TOP_CENTER});
+            toast.error(error2[0], {position: toast.POSITION.TOP_RIGHT});
         }
     }
 

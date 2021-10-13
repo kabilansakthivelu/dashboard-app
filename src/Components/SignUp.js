@@ -37,12 +37,12 @@ const SignUp = () => {
                 userFirstName = userName1[0];
             });
             history.push("/");
-            toast.success(`Hey ${userFirstName}, Welcome to Planner !!`, {position: toast.POSITION.TOP_CENTER});
+            toast.success(`Hey ${userFirstName}, Welcome to Planner !!`, {position: toast.POSITION.TOP_RIGHT});
         }
         catch(error){
             let error1 = error.message.split(":");
             let error2 = error1[1].split("(");
-            toast.error(error2[0], {position: toast.POSITION.TOP_CENTER});
+            toast.error(error2[0], {position: toast.POSITION.TOP_RIGHT});
         }
         }
     }

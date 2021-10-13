@@ -6,6 +6,8 @@ import Home from './Components/Home/Home';
 import AddNew from './Components/AddNew/AddNew';
 import Chart from './Components/Chart/Chart';
 import Error from './Components/Error';
+import {auth} from './firebase';
+import {useAuthState} from 'react-firebase-hooks/auth';
 
 export const ValuesContext = React.createContext();
 
@@ -13,10 +15,11 @@ function App() {
 
   const emailRef = useRef();
   const passwordRef = useRef();
+  const [user] = useAuthState(auth);
 
   return (
     <Router>
-      <ValuesContext.Provider value={{emailRef, passwordRef}}>
+      <ValuesContext.Provider value={{emailRef, passwordRef, user}}>
       <Switch>
         <Route path="/signin">
           <SignIn />

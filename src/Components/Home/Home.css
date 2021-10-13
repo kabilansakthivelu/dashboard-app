@@ -14,7 +14,7 @@
     @apply bg-gray-200 w-full rounded-md h-screen
 }
 .boardHeader{
-    @apply mt-4 ml-4 text-lg font-bold
+    @apply mt-2 ml-2 md:mt-4 md:ml-4 text-xs md:text-lg font-bold
 }
 .headerDivider{
     @apply border-white my-2

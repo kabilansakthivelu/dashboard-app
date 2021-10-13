@@ -35,7 +35,7 @@ const Navbar = () => {
     const signOut = () => {
         auth.signOut(); 
         history.push("/signin");
-        toast.success("Logged out succesfully", {position: toast.POSITION.TOP_CENTER});
+        toast.success("Logged out succesfully", {position: toast.POSITION.TOP_RIGHT});
     }
 
     return (
