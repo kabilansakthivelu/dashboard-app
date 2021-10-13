@@ -16,26 +16,36 @@ const AddNew = () => {
             <div className="HomePageContent">
             <h1 className="description">Add a new task</h1>
             <form className="additionForm">
-                <label htmlFor="state">State</label>
-                <select name="state" id="state">
-                    <option selected value="null">Please Select</option>
+                <div className="inputFieldForm">
+                <label htmlFor="state" className="stateFieldLabel">State: </label>
+                <select required name="state" id="state" className="fieldInput">
+                    <option value="null">Please Select</option>
                     <option value="nextUp">Next Up</option>
                     <option value="inProgress">In Progress</option>
                     <option value="completed">Completed</option>
                 </select>
-                <label htmlFor="priority">Priority</label>
-                <select name="priority" id="priority">
-                    <option selected value="null">Please Select</option>
+                </div>
+                <div className="inputFieldForm">
+                <label htmlFor="priority" className="priorityFieldLabel">Priority:</label>
+                <select required name="priority" id="priority" className="fieldInput">
+                    <option value="null">Please Select</option>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
                 </select>
-                <label htmlFor="title">Title</label>
-                <input type="text" id="title"/>
-                <label htmlFor="description">Description</label>
-                <textarea name="description" id="description" cols="30" rows="10"></textarea>
-                <button>Save</button>
-                <button>Cancel</button>
+                </div>
+                <div className="inputFieldForm">
+                <label htmlFor="title" className="titleFieldLabel">Title: &nbsp;</label>
+                <input required type="text" id="title" className="fieldInput"/>
+                </div>
+                <div className="inputFieldForm">
+                <label htmlFor="description" className="descriptionFieldLabel">Description: &nbsp;</label>
+                <textarea name="description" id="description" className="textAreaInput"></textarea>
+                </div>
+                <div className="buttonSection">
+                <button className="individualButton">Save</button>
+                <button className="individualButton">Cancel</button>
+                </div>
             </form>
             </div>
         </div>)
