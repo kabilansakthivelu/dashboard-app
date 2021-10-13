@@ -8,7 +8,7 @@
     @apply flex flex-col space-y-4
 }
 .largeScreen{
-    @apply float-left h-full fixed w-1/5 bg-gray-200
+    @apply float-left h-full fixed md:w-40 lg:w-56 xl:w-72 bg-gray-200
 }
 .appHeader{
     @apply hidden md:block text-purple-700 text-xl lg:text-2xl text-center mt-8 cursor-pointer font-bold
