@@ -5,6 +5,7 @@ import {MdAddTask} from 'react-icons/md';
 import {HiOutlineLogout} from 'react-icons/hi';
 import {Link, useHistory} from 'react-router-dom';
 import {auth} from '../../firebase';
+import {toast} from 'react-toastify';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -34,6 +35,7 @@ const Navbar = () => {
     const signOut = () => {
         auth.signOut(); 
         history.push("/signin");
+        toast.success("Logged out succesfully", {position: toast.POSITION.TOP_CENTER});
     }
 
     return (
@@ -56,14 +58,12 @@ const Navbar = () => {
             ) : ""}
         </div> ) : (
             <div className="largeScreen">
-            <Link to="/"><h1>Planner</h1></Link>
-            <div>
-            <ul className="navbarIcons">
+            <Link to="/" className="appHeader"><h1>Planner</h1></Link>
+            <div className="navbarIcons">
             <Link to="/" className="menuLinks"><AiFillHome/>Home</Link>
             <Link to="/newTask" className="menuLinks"><MdAddTask/>Add New</Link>
             <Link to="/chart" className="menuLinks"><AiFillPieChart/>Chart</Link>
             <div onClick={signOut} className="menuLinks"><HiOutlineLogout/>Sign Out</div>
-            </ul>
             </div>
             </div>
         )}

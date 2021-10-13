@@ -5,16 +5,19 @@
     @apply w-full h-full fixed top-14 right-0 bg-purple-500 text-white p-6 leading-loose
 }
 .hamburgerMenuLinks{
-    @apply flex flex-col
+    @apply flex flex-col space-y-4
 }
 .largeScreen{
-    @apply float-left h-full fixed w-20 bg-gray-600 lg:w-28
+    @apply float-left h-full fixed w-1/5 bg-gray-200
+}
+.appHeader{
+    @apply hidden md:block text-purple-700 text-xl lg:text-2xl text-center mt-8 cursor-pointer font-bold
 }
 .navbarIcons{
-    @apply flex md:flex-col md:items-center md:space-y-10 lg:space-y-12 md:mt-16 lg:mt-28 justify-between p-4 sm:p-6 text-white text-xl sm:text-2xl cursor-pointer
+    @apply flex md:flex-col md:space-y-10 lg:space-y-12 md:mt-16 lg:mt-28 p-4 sm:p-6 text-gray-700 lg:text-xl cursor-pointer font-semibold
 }
 .menuLinks{
-    @apply flex items-center gap-x-3
+    @apply flex items-center gap-x-3 md:pl-2 lg:pl-8 xl:pl-14
 }
 
 
