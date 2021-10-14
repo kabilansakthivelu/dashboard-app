@@ -5,6 +5,7 @@ import SignUp from './Components/SignUp';
 import Home from './Components/Home/Home';
 import AddNew from './Components/AddNew/AddNew';
 import Chart from './Components/Chart/Chart';
+import ViewTask from './Components/ViewTask/ViewTask';
 import Error from './Components/Error';
 import {auth, db} from './firebase';
 import {useAuthState} from 'react-firebase-hooks/auth';
@@ -70,7 +71,7 @@ function App() {
 
   return (
     <Router>
-      <ValuesContext.Provider value={{emailRef, passwordRef, user, nextUpTasks, inProgressTasks, completedTasks}}>
+      <ValuesContext.Provider value={{emailRef, passwordRef, user, tasks, nextUpTasks, inProgressTasks, completedTasks}}>
       <Switch>
         <Route path="/signin">
           <SignIn />
@@ -86,6 +87,8 @@ function App() {
         </Route>
         <Route path="/chart">
           <Chart />
+        </Route>
+        <Route path="/view/:id" children={<ViewTask/>}>
         </Route>
         <Route path="*">
           <Error />

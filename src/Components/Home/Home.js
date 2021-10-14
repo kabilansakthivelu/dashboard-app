@@ -13,6 +13,10 @@ const Home = () => {
 
     const history = useHistory();
 
+    const placeHolderCall = (id) => {
+        history.push(`/view/${id}`);
+    }
+
     return (
         <>
         {user ? 
@@ -54,7 +58,7 @@ const Home = () => {
                         taskClassName = "taskHighPriority";
                     }
 
-                    return (<div key={task.id} className="singleTask">
+                    return (<div key={task.id} className="singleTask" onClick={()=>{placeHolderCall(task.id)}}>
                         <h1 className={taskClassName}>{task.priority}</h1>
                         <h1 className="taskTitle">{task.taskName}</h1>
                         <h1 className="taskComments">{task.comments}</h1>
@@ -99,7 +103,7 @@ const Home = () => {
                         taskClassName = "taskHighPriority";
                     }
 
-                    return (<div key={task.id} className="singleTask">
+                    return (<div key={task.id} className="singleTask" onClick={()=>{placeHolderCall(task.id)}}>
                         <h1 className={taskClassName}>{task.priority}</h1>
                         <h1 className="taskTitle">{task.taskName}</h1>
                         <h1 className="taskComments">{task.comments}</h1>
@@ -144,7 +148,7 @@ const Home = () => {
                         taskClassName = "taskHighPriority";
                     }
 
-                    return (<div key={task.id} className="singleTask">
+                    return (<div key={task.id} className="singleTask" onClick={()=>{placeHolderCall(task.id)}}>
                         <h1 className={taskClassName}>{task.priority}</h1>
                         <h1 className="taskTitle">{task.taskName}</h1>
                         <h1 className="taskComments">{task.comments}</h1>
