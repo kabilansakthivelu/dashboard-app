@@ -3,11 +3,15 @@ import Navbar from '../Navbar/Navbar';
 import SignIn from '../SignIn/SignIn';
 import {ValuesContext} from '../../App';
 import {BiTimeFive} from 'react-icons/bi';
+import {AiOutlinePlus} from 'react-icons/ai';
+import {useHistory} from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
 
     const {user, nextUpTasks, inProgressTasks, completedTasks} = useContext(ValuesContext);
+
+    const history = useHistory();
 
     return (
         <>
@@ -23,9 +27,17 @@ const Home = () => {
             {/* Next Up board */}
 
             <div className="individualBoard">
+
+                <div className="boardHeaderSection">
                 <h1 className="boardHeader">Next Up</h1>
+                {(nextUpTasks.length > 0) ? 
+                (<p className="tasksCounter">{nextUpTasks.length}</p>)
+                : ""}
+                </div>
+
                 <hr className="headerDivider"/>
-                {nextUpTasks.map((task)=>{ 
+                {(nextUpTasks.length > 0) ?
+                (nextUpTasks.map((task)=>{ 
 
                     const time1 = task.time.split(" ");
                     const time = time1[1] + " " + time1[0];
@@ -51,15 +63,26 @@ const Home = () => {
                         <h1>{time}</h1>
                         </div>
                     </div>)
-                })}
+                }))
+                :
+                (<button className="addTaskButton" onClick={()=>{history.push("/newTask")}}><AiOutlinePlus/>Add Task</button>)
+                }
             </div>
 
             {/* In Progress board */}
 
             <div className="individualBoard">
+
+                <div className="boardHeaderSection">
                 <h1 className="boardHeader">In Progress</h1>
+                {(inProgressTasks.length > 0) ? 
+                (<p className="tasksCounter">{inProgressTasks.length}</p>)
+                : ""}
+                </div>
+
                 <hr className="headerDivider"/>
-                {inProgressTasks.map((task)=>{ 
+                {(inProgressTasks.length > 0) ?
+                (inProgressTasks.map((task)=>{ 
 
                     const time1 = task.time.split(" ");
                     const time = time1[1] + " " + time1[0];
@@ -85,15 +108,26 @@ const Home = () => {
                         <h1>{time}</h1>
                         </div>
                     </div>)
-                })}
+                }))
+                :
+                (<button className="addTaskButton" onClick={()=>{history.push("/newTask")}}><AiOutlinePlus/>Add Task</button>)
+                }
             </div>
 
             {/* Completed board */}
 
             <div className="individualBoard">
+
+                <div className="boardHeaderSection">
                 <h1 className="boardHeader">Completed</h1>
+                {(completedTasks.length > 0) ? 
+                (<p className="tasksCounter">{completedTasks.length}</p>)
+                : ""}
+                </div>
+
                 <hr className="headerDivider"/>
-                {completedTasks.map((task)=>{ 
+                {(completedTasks.length > 0) ? 
+                (completedTasks.map((task)=>{ 
 
                     const time1 = task.time.split(" ");
                     const time = time1[1] + " " + time1[0];
@@ -119,7 +153,10 @@ const Home = () => {
                         <h1>{time}</h1>
                         </div>
                     </div>)
-                })}
+                }))
+                :
+                (<button className="addTaskButton" onClick={()=>{history.push("/newTask")}}><AiOutlinePlus/>Add Task</button>)
+                }
             </div>
 
             </div>
