@@ -59,6 +59,33 @@ const Home = () => {
             <div className="individualBoard">
                 <h1 className="boardHeader">In Progress</h1>
                 <hr className="headerDivider"/>
+                {inProgressTasks.map((task)=>{ 
+
+                    const time1 = task.time.split(" ");
+                    const time = time1[1] + " " + time1[0];
+
+                    let taskClassName;
+
+                    if(task.priority === "low"){
+                        taskClassName = "taskLowPriority";
+                    }
+                    else if(task.priority === "medium"){
+                        taskClassName = "taskMediumPriority";
+                    }
+                    else{
+                        taskClassName = "taskHighPriority";
+                    }
+
+                    return (<div key={task.id} className="singleTask">
+                        <h1 className={taskClassName}>{task.priority}</h1>
+                        <h1 className="taskTitle">{task.taskName}</h1>
+                        <h1 className="taskComments">{task.comments}</h1>
+                        <div className="taskTime">
+                        <BiTimeFive/>
+                        <h1>{time}</h1>
+                        </div>
+                    </div>)
+                })}
             </div>
 
             {/* Completed board */}
@@ -66,7 +93,35 @@ const Home = () => {
             <div className="individualBoard">
                 <h1 className="boardHeader">Completed</h1>
                 <hr className="headerDivider"/>
+                {completedTasks.map((task)=>{ 
+
+                    const time1 = task.time.split(" ");
+                    const time = time1[1] + " " + time1[0];
+
+                    let taskClassName;
+
+                    if(task.priority === "low"){
+                        taskClassName = "taskLowPriority";
+                    }
+                    else if(task.priority === "medium"){
+                        taskClassName = "taskMediumPriority";
+                    }
+                    else{
+                        taskClassName = "taskHighPriority";
+                    }
+
+                    return (<div key={task.id} className="singleTask">
+                        <h1 className={taskClassName}>{task.priority}</h1>
+                        <h1 className="taskTitle">{task.taskName}</h1>
+                        <h1 className="taskComments">{task.comments}</h1>
+                        <div className="taskTime">
+                        <BiTimeFive/>
+                        <h1>{time}</h1>
+                        </div>
+                    </div>)
+                })}
             </div>
+
             </div>
             </div>
         </div>)
