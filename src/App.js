@@ -40,7 +40,7 @@ function App() {
             }else{
                 amOrPm = "AM";
             }
-            const time = setTime[2] +" "+ setTime[1] +" "+ setTime[3] + "  " + time1[0]+":"+time1[1]+":"+time1[2] + " " + amOrPm;
+            const time = setTime[2] +" "+ setTime[1] +" "+ setTime[3] + "  " + "at" + " " + time1[0]+":"+time1[1]+":"+time1[2] + " " + amOrPm;
 
         const result = {
           id: doc.id,

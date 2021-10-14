@@ -34,9 +34,7 @@ const Home = () => {
 
                 <div className="boardHeaderSection">
                 <h1 className="boardHeader">Next Up</h1>
-                {(nextUpTasks.length > 0) ? 
-                (<p className="tasksCounter">{nextUpTasks.length}</p>)
-                : ""}
+                <p className="tasksCounter">{nextUpTasks.length}</p>
                 </div>
 
                 <hr className="headerDivider"/>
@@ -79,9 +77,7 @@ const Home = () => {
 
                 <div className="boardHeaderSection">
                 <h1 className="boardHeader">In Progress</h1>
-                {(inProgressTasks.length > 0) ? 
-                (<p className="tasksCounter">{inProgressTasks.length}</p>)
-                : ""}
+                <p className="tasksCounter">{inProgressTasks.length}</p>
                 </div>
 
                 <hr className="headerDivider"/>
@@ -124,9 +120,7 @@ const Home = () => {
 
                 <div className="boardHeaderSection">
                 <h1 className="boardHeader">Completed</h1>
-                {(completedTasks.length > 0) ? 
-                (<p className="tasksCounter">{completedTasks.length}</p>)
-                : ""}
+                <p className="tasksCounter">{completedTasks.length}</p>
                 </div>
 
                 <hr className="headerDivider"/>

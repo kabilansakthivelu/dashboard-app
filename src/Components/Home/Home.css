@@ -20,7 +20,7 @@
     @apply text-xs md:text-lg font-bold
 }
 .tasksCounter{
-    @apply w-4 h-4 md:w-8 md:h-8 rounded-full text-center md:pt-0.5 bg-white font-semibold text-xs md:text-lg
+    @apply w-4 h-4 md:w-7 md:h-7 rounded-full text-center md:pt-0.5 bg-white font-semibold text-xs md:text-base
 }
 .headerDivider{
     @apply border-white mb-2

@@ -5,6 +5,7 @@ import {ValuesContext} from '../../App';
 import {useHistory, useParams} from 'react-router-dom';
 import {toast} from 'react-toastify';
 import {db, auth} from '../../firebase';
+import './ViewTask.css';
 
 const ViewTask = () => {
 
@@ -48,7 +49,7 @@ const ViewTask = () => {
             toast.warning(`Please don't start your task name with "SPACE".`, {position: toast.POSITION.RIGHT});
         }
         else{
-            db.collection('userTasks').doc(auth.currentUser.uid).collection('tasks').add({
+            db.collection('userTasks').doc(auth.currentUser.uid).collection('tasks').doc(id).set({
                 state,
                 priority,
                 taskName,
@@ -56,9 +57,15 @@ const ViewTask = () => {
                 time: (new Date()).getTime().toString(),
             })
             history.push("/");
-            toast.success("Task created successfully !!", {position: toast.POSITION.RIGHT});
+            toast.success("Task updated successfully !!", {position: toast.POSITION.RIGHT});
         }
         }
+
+    const deleteTask = () =>{
+        db.collection('userTasks').doc(auth.currentUser.uid).collection('tasks').doc(id).delete();
+        history.push("/");
+        toast.success("Task deleted successfully !!", {position: toast.POSITION.RIGHT});
+    }
 
     return (
         <>
@@ -96,21 +103,23 @@ const ViewTask = () => {
                 <input required type="text" id="title" className="fieldInput" ref=
                 {refTaskName} placeholder="Enter the task name..."/>
                 </div>
+
                 <div className="inputFieldForm">
                 <label htmlFor="description" className="descriptionFieldLabel">Comments: &nbsp;</label>
                 <textarea name="description" id="description" className="textAreaInput" ref={refComments} placeholder="Enter your comments here..."></textarea>
                 </div>
 
-                <div className="inputFieldForm">
-                <p className="stateFieldLabel">Last modified: </p>
+                <div className="timeSection">
+                <p className="timeLabel">Last modified: </p>
                 {(obj !== undefined) ?
-                (<p>{obj.time}</p>)
+                (<p className="timeValue">{obj.time}</p>)
                 :
                 ""}
                 </div>
 
                 <div className="buttonSection">
                 <button className="individualButton">Save</button>
+                <button className="individualButton" onClick={deleteTask}>Delete</button>
                 <button className="individualButton" onClick={()=>{history.push("/")}}>Cancel</button>
                 </div>
 
