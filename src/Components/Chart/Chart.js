@@ -57,7 +57,7 @@ const Chart = () => {
                 }}
             />)
             :
-            (<p className="alertText">You don't have any tasks added. Please add tasks and view your overall progress here !!</p>)}
+            (<p className="alertText">You don't have any tasks created. Please add tasks and view your overall progress here !!</p>)}
             </div>
         </div>)
         :

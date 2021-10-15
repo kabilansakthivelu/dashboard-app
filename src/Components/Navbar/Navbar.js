@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {GiHamburgerMenu} from 'react-icons/gi';
-import {AiOutlineClose, AiFillHome, AiFillPieChart} from 'react-icons/ai';
+import {AiOutlineClose, AiFillHome, AiFillPieChart, AiOutlineSearch} from 'react-icons/ai';
 import {MdAddTask} from 'react-icons/md';
 import {HiOutlineLogout} from 'react-icons/hi';
 import {Link, useHistory} from 'react-router-dom';
@@ -51,7 +51,8 @@ const Navbar = () => {
                 <ul className="hamburgerMenuLinks">
                 <Link to="/" onClick={()=>{setShowMenu(false); setMenuClose(false)}} className="menuLinks"><AiFillHome/>Home</Link>
                 <Link to="/newTask" onClick={()=>{setShowMenu(false); setMenuClose(false)}} className="menuLinks"><MdAddTask/>Add New</Link>
-                <Link to="/chart" onClick={()=>{setShowMenu(false); setMenuClose(false)}} className="menuLinks"><AiFillPieChart/>Chart</Link>
+                <Link to="/search" onClick={()=>{setShowMenu(false); setMenuClose(false)}} className="menuLinks"><AiOutlineSearch/>Search</Link>
+                <Link to="/chart" onClick={()=>{setShowMenu(false); setMenuClose(false)}} className="menuLinks"><AiFillPieChart/>Overview</Link>
                 <div onClick={signOut} className="menuLinks"><HiOutlineLogout/>Sign Out</div>
                 </ul>
                 </div>
@@ -62,7 +63,8 @@ const Navbar = () => {
             <div className="navbarIcons">
             <Link to="/" className="menuLinks"><AiFillHome/>Home</Link>
             <Link to="/newTask" className="menuLinks"><MdAddTask/>Add New</Link>
-            <Link to="/chart" className="menuLinks"><AiFillPieChart/>Chart</Link>
+            <Link to="/search" className="menuLinks"><AiOutlineSearch/>Search</Link>
+            <Link to="/chart" className="menuLinks"><AiFillPieChart/>Overview</Link>
             <div onClick={signOut} className="menuLinks"><HiOutlineLogout/>Sign Out</div>
             </div>
             </div>

@@ -5,6 +5,7 @@ import SignUp from './Components/SignUp';
 import Home from './Components/Home/Home';
 import AddNew from './Components/AddNew/AddNew';
 import Chart from './Components/Chart/Chart';
+import Search from './Components/Search/Search';
 import ViewTask from './Components/ViewTask/ViewTask';
 import Error from './Components/Error';
 import {auth, db} from './firebase';
@@ -84,6 +85,9 @@ function App() {
         </Route>
         <Route path="/newTask">
           <AddNew />
+        </Route>
+        <Route path="/search">
+          <Search />
         </Route>
         <Route path="/chart">
           <Chart />
