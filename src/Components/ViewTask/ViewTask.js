@@ -1,4 +1,4 @@
-import React, {useContext, useRef, useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import Navbar from '../Navbar/Navbar';
 import SignIn from '../SignIn/SignIn';
 import {ValuesContext} from '../../App';
@@ -9,12 +9,7 @@ import './ViewTask.css';
 
 const ViewTask = () => {
 
-    const {user, tasks} = useContext(ValuesContext);
-
-    const refState = useRef();
-    const refPriority = useRef();
-    const refTaskName = useRef();
-    const refComments = useRef();
+    const {user, tasks, refState, refPriority, refTaskName, refComments} = useContext(ValuesContext);
 
     const history = useHistory();
 

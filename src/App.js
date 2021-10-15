@@ -17,8 +17,11 @@ function App() {
 
   const emailRef = useRef();
   const passwordRef = useRef();
+  const refState = useRef();
+  const refPriority = useRef();
+  const refTaskName = useRef();
+  const refComments = useRef();
   const [user] = useAuthState(auth);
-
   const [tasks, setTasks] = useState([]);
 
   useEffect(()=>{
@@ -72,7 +75,7 @@ function App() {
 
   return (
     <Router>
-      <ValuesContext.Provider value={{emailRef, passwordRef, user, tasks, nextUpTasks, inProgressTasks, completedTasks}}>
+      <ValuesContext.Provider value={{emailRef, passwordRef, user, tasks, nextUpTasks, inProgressTasks, completedTasks, refComments, refTaskName, refPriority, refState}}>
       <Switch>
         <Route path="/signin">
           <SignIn />
