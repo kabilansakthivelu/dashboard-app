@@ -21,10 +21,25 @@ const Chart = () => {
             <div className="HomePageContent">
             <p className="description">The essence of planning is execution</p>
             <p className="description">Have a look on your progress</p>
-            <Pie
-	            width={100}
-	            height={250}
-	            options={{ maintainAspectRatio: false }}
+
+            {((nextUpCount > 0) || (inProgressCount > 0) || (completedCount > 0))
+            ?
+            (<Pie className="chart"
+              width={350}
+              height={400}
+	            options= {{
+                maintainAspectRatio: false,
+                responsive: false,
+                plugins: {
+                  legend: {
+                    labels: {
+                      font: {
+                        size: 16
+                            }
+                            }
+                          }
+                        }
+              }}
               data={{
                     labels: [
                             'Next Up',
@@ -36,11 +51,13 @@ const Chart = () => {
                             backgroundColor: [
                               'rgb(255, 90, 132)',
                               'rgb(54, 162, 235)',
-                              'rgb(255, 205, 86)'
+                              'rgb(0, 204, 68)'
                                             ],
                               }]
                 }}
-            />
+            />)
+            :
+            (<p className="alertText">You don't have any tasks added. Please add tasks and view your overall progress here !!</p>)}
             </div>
         </div>)
         :

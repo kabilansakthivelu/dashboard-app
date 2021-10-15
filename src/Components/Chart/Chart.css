@@ -1,0 +1,6 @@
+.alertText{
+    @apply text-center mt-10 md:mt-28 font-semibold md:text-lg
+}
+.chart{
+    @apply mx-auto
+}
