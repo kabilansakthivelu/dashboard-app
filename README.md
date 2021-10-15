@@ -1,4 +1,4 @@
-# Planner
+# Task Planner
 
 ## About
 
