@@ -17,7 +17,7 @@
     @apply flex md:flex-col md:space-y-10 lg:space-y-12 md:mt-16 lg:mt-28 p-4 sm:p-6 text-gray-700 lg:text-xl cursor-pointer font-semibold
 }
 .menuLinks{
-    @apply flex items-center gap-x-3 md:pl-2 lg:pl-8 xl:pl-14
+    @apply flex items-center gap-x-3 pr-2 md:pr-0 md:pl-2 lg:pl-8 xl:pl-14
 }
 
 
