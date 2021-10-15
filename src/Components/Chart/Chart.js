@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import Navbar from '../Navbar/Navbar';
 import SignIn from '../SignIn/SignIn';
 import {ValuesContext} from '../../App';
-import { Pie, defaults } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 import './Chart.css';
 
 const Chart = () => {
