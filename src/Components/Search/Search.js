@@ -57,7 +57,7 @@ const Search = () => {
             <Navbar/>
             <div className="HomePageContent">
             <p className="description">Plan your work and work your plan</p>
-            <p className="description">Looking for a created task ?</p>
+            <p className="description2">Looking for a created task ?</p>
 
             <form onSubmit={search2}>
             <div className="searchField">

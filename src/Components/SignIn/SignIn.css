@@ -20,7 +20,7 @@
     @apply mx-auto ml-0
 }
 .googleIcon{
-    @apply mx-auto mt-2 text-3xl lg:text-4xl pb-2 mr-2 lg:mt-1
+    @apply mx-auto mt-2 text-3xl lg:text-4xl pb-2 mr-2 lg:mt-2
 }
 .orDividerDiv{
     @apply flex items-center justify-center

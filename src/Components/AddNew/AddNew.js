@@ -53,7 +53,7 @@ const AddNew = () => {
             <Navbar/>
             <div className="HomePageContent">
             <p className="description">It always seems impossible until it's done. Planning is everything</p>
-            <h1 className="description">Add a new task</h1>
+            <h1 className="description2">Add a new task</h1>
             <form className="additionForm" onSubmit={addTask}>
                 <div className="inputFieldForm">
                 <label htmlFor="state" className="stateFieldLabel">State: </label>

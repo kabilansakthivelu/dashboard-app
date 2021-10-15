@@ -20,12 +20,12 @@ const Chart = () => {
             <Navbar/>
             <div className="HomePageContent">
             <p className="description">The essence of planning is execution</p>
-            <p className="description">Have a look on your progress</p>
+            <p className="description2">Have a look on your progress</p>
 
             {((nextUpCount > 0) || (inProgressCount > 0) || (completedCount > 0))
             ?
             (<Pie className="chart"
-              width={350}
+              width={300}
               height={400}
 	            options= {{
                 maintainAspectRatio: false,
@@ -37,6 +37,11 @@ const Chart = () => {
                         size: 16
                             }
                             }
+                          }
+                        },
+                layout: {
+                  padding: {
+                    top: 10
                           }
                         }
               }}

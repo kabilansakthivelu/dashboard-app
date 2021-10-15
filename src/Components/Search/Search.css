@@ -1,5 +1,5 @@
 .searchField{
-    @apply mx-auto mt-10 border-2 border-black rounded-lg relative w-80 h-10 shadow-md
+    @apply mx-auto mt-10 border-2 border-black rounded-lg relative w-72 md:w-96 h-10 shadow-md
 }
 .searchInput{
     @apply pl-2 outline-none mt-1 w-11/12

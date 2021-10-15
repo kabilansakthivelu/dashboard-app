@@ -74,7 +74,7 @@ const ViewTask = () => {
             <Navbar/>
             <div className="HomePageContent">
             <p className="description">An hour of planning can save you 10 hours of doing</p>
-            <h1 className="description">Update your task</h1>
+            <h1 className="description2">Update your task</h1>
 
             <form className="additionForm" onSubmit={updateTask}>
 

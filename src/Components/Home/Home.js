@@ -23,8 +23,8 @@ const Home = () => {
         (<div>
             <Navbar/>
             <div className="HomePageContent">
-            <p className="description">Always welcome the task that makes you go beyond yourself</p>
-            <p className="description">Plan and classify your tasks for an efficient work</p>
+            <p className="description">It takes a good effort to begin and a great effort to complete a task !!</p>
+            <p className="description2">Plan and classify your tasks for an efficient work</p>
             <p className="sectionHeader">Your tasks</p>
             <div className="boardSection">
 

@@ -4,8 +4,11 @@
 .description{
     @apply text-purple-700 font-semibold md:text-lg text-center
 }
+.description2{
+    @apply text-purple-700 md:text-lg text-center
+}
 .sectionHeader{
-    @apply md:text-xl font-bold mt-6
+    @apply md:text-xl font-semibold mt-6
 }
 .boardSection{
     @apply flex  space-x-1 lg:space-x-7 mt-4
@@ -17,7 +20,7 @@
     @apply flex items-center my-2 md:my-4 justify-between mx-1 md:mx-6
 }
 .boardHeader{
-    @apply text-xs md:text-lg font-bold
+    @apply text-xs md:text-lg font-semibold
 }
 .tasksCounter{
     @apply w-4 h-4 md:w-7 md:h-7 rounded-full text-center md:pt-0.5 bg-white font-semibold text-xs md:text-base
