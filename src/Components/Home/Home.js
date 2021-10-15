@@ -57,13 +57,13 @@ const Home = () => {
                     }
 
                     return (<div key={task.id} className="singleTask" onClick={()=>{placeHolderCall(task.id)}}>
-                        <h1 className={taskClassName}>{task.priority}</h1>
                         <h1 className="taskTitle">{task.taskName}</h1>
                         <h1 className="taskComments">{task.comments}</h1>
                         <div className="taskTime">
                         <BiTimeFive/>
                         <h1>{time}</h1>
                         </div>
+                        <h1 className={taskClassName}>{task.priority}</h1>
                     </div>)
                 }))
                 :
@@ -100,13 +100,13 @@ const Home = () => {
                     }
 
                     return (<div key={task.id} className="singleTask" onClick={()=>{placeHolderCall(task.id)}}>
-                        <h1 className={taskClassName}>{task.priority}</h1>
                         <h1 className="taskTitle">{task.taskName}</h1>
                         <h1 className="taskComments">{task.comments}</h1>
                         <div className="taskTime">
                         <BiTimeFive/>
                         <h1>{time}</h1>
                         </div>
+                        <h1 className={taskClassName}>{task.priority}</h1>
                     </div>)
                 }))
                 :
@@ -143,13 +143,13 @@ const Home = () => {
                     }
 
                     return (<div key={task.id} className="singleTask" onClick={()=>{placeHolderCall(task.id)}}>
-                        <h1 className={taskClassName}>{task.priority}</h1>
                         <h1 className="taskTitle">{task.taskName}</h1>
                         <h1 className="taskComments">{task.comments}</h1>
                         <div className="taskTime">
                         <BiTimeFive/>
                         <h1>{time}</h1>
                         </div>
+                        <h1 className={taskClassName}>{task.priority}</h1>
                     </div>)
                 }))
                 :
