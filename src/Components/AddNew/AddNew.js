@@ -51,7 +51,7 @@ const AddNew = () => {
             <h1 className="description2">Add a new task</h1>
             <form className="additionForm" onSubmit={addTask}>
                 <div className="inputFieldForm">
-                <label htmlFor="state" className="stateFieldLabel">State: </label>
+                <label htmlFor="state" className="stateFieldLabel">State*</label>
                 <select required name="state" id="state" className="fieldInput" ref={refState}>
                     <option value="null">Please Select</option>
                     <option value="nextUp">Next Up</option>
@@ -60,7 +60,7 @@ const AddNew = () => {
                 </select>
                 </div>
                 <div className="inputFieldForm">
-                <label htmlFor="priority" className="priorityFieldLabel">Priority:</label>
+                <label htmlFor="priority" className="priorityFieldLabel">Priority*</label>
                 <select required name="priority" id="priority" className="fieldInput" ref={refPriority}>
                     <option value="null">Please Select</option>
                     <option value="low">Low</option>
@@ -69,12 +69,12 @@ const AddNew = () => {
                 </select>
                 </div>
                 <div className="inputFieldForm">
-                <label htmlFor="title" className="titleFieldLabel">Task: &nbsp;</label>
+                <label htmlFor="title" className="titleFieldLabel">Task* &nbsp;</label>
                 <input required type="text" id="title" className="fieldInput" ref=
                 {refTaskName} placeholder="Enter the task name..."/>
                 </div>
                 <div className="inputFieldForm">
-                <label htmlFor="description" className="descriptionFieldLabel">Comments: &nbsp;</label>
+                <label htmlFor="description" className="descriptionFieldLabel">Comments &nbsp;</label>
                 <textarea name="description" id="description" className="textAreaInput" ref={refComments} placeholder="Enter your comments here..."></textarea>
                 </div>
                 <div className="buttonSection">
