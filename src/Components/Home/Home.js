@@ -41,8 +41,8 @@ const Home = () => {
                 {(nextUpTasks.length > 0) ?
                 (nextUpTasks.map((task)=>{ 
 
-                    const time1 = task.time.split(" ");
-                    const time = time1[1] + " " + time1[0];
+                    const deadline1 = task.deadline.split("-");
+                    const deadline = deadline1[2] + "/" + deadline1[1] + "/" + deadline1[0];
 
                     let taskClassName;
 
@@ -61,7 +61,7 @@ const Home = () => {
                         <h1 className="taskComments">{task.comments}</h1>
                         <div className="taskTime">
                         <BiTimeFive/>
-                        <h1>{time}</h1>
+                        <h1>{deadline}</h1>
                         </div>
                         <h1 className={taskClassName}>{task.priority}</h1>
                     </div>)
@@ -84,8 +84,8 @@ const Home = () => {
                 {(inProgressTasks.length > 0) ?
                 (inProgressTasks.map((task)=>{ 
 
-                    const time1 = task.time.split(" ");
-                    const time = time1[1] + " " + time1[0];
+                    const deadline1 = task.deadline.split("-");
+                    const deadline = deadline1[2] + "/" + deadline1[1] + "/" + deadline1[0];
 
                     let taskClassName;
 
@@ -104,7 +104,7 @@ const Home = () => {
                         <h1 className="taskComments">{task.comments}</h1>
                         <div className="taskTime">
                         <BiTimeFive/>
-                        <h1>{time}</h1>
+                        <h1>{deadline}</h1>
                         </div>
                         <h1 className={taskClassName}>{task.priority}</h1>
                     </div>)
@@ -127,8 +127,8 @@ const Home = () => {
                 {(completedTasks.length > 0) ? 
                 (completedTasks.map((task)=>{ 
 
-                    const time1 = task.time.split(" ");
-                    const time = time1[1] + " " + time1[0];
+                    const deadline1 = task.deadline.split("-");
+                    const deadline = deadline1[2] + "/" + deadline1[1] + "/" + deadline1[0];
 
                     let taskClassName;
 
@@ -147,7 +147,7 @@ const Home = () => {
                         <h1 className="taskComments">{task.comments}</h1>
                         <div className="taskTime">
                         <BiTimeFive/>
-                        <h1>{time}</h1>
+                        <h1>{deadline}</h1>
                         </div>
                         <h1 className={taskClassName}>{task.priority}</h1>
                     </div>)
