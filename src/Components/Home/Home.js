@@ -42,7 +42,7 @@ const Home = () => {
                 (nextUpTasks.map((task)=>{ 
 
                     const deadline1 = task.deadline.split("-");
-                    const deadline = deadline1[2] + "/" + deadline1[1] + "/" + deadline1[0];
+                    const deadline = deadline1[2] + "-" + deadline1[1] + "-" + deadline1[0];
 
                     let taskClassName;
 
@@ -85,7 +85,7 @@ const Home = () => {
                 (inProgressTasks.map((task)=>{ 
 
                     const deadline1 = task.deadline.split("-");
-                    const deadline = deadline1[2] + "/" + deadline1[1] + "/" + deadline1[0];
+                    const deadline = deadline1[2] + "-" + deadline1[1] + "-" + deadline1[0];
 
                     let taskClassName;
 
@@ -128,7 +128,7 @@ const Home = () => {
                 (completedTasks.map((task)=>{ 
 
                     const deadline1 = task.deadline.split("-");
-                    const deadline = deadline1[2] + "/" + deadline1[1] + "/" + deadline1[0];
+                    const deadline = deadline1[2] + "-" + deadline1[1] + "-" + deadline1[0];
 
                     let taskClassName;
 

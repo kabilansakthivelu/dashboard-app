@@ -14,6 +14,8 @@ const Search = () => {
 
     const [allSearchResults, setAllSearchResults] = useState([]);
 
+    const [isSearchKeyEntered, setIsSearchKeyEntered] = useState(false);
+
     const history = useHistory();
 
     const searchKeyRef = useRef();
@@ -25,11 +27,13 @@ const Search = () => {
     const search = (e) =>{
         let enteredSearchKey = e.target.value;
         if(enteredSearchKey !== ""){
+        setIsSearchKeyEntered(true)
         setAllSearchResults(tasks.filter((item)=>{
             return item.taskName.toLowerCase().includes(enteredSearchKey.toLowerCase());
         }))
         }else{
-            setAllSearchResults([])
+            setAllSearchResults([]);
+            setIsSearchKeyEntered(false);
         }
     }
 
@@ -37,15 +41,17 @@ const Search = () => {
         e.preventDefault();
         let enteredSearchKey = searchKeyRef.current.value;
         if(enteredSearchKey === ""){
-            toast.warning("Please enter a task name", {position: toast.POSITION.RIGHT})
+            toast.warning("Please enter a task name", {position: toast.POSITION.RIGHT});
+            setIsSearchKeyEntered(false);
         }
         else
         {
+            setIsSearchKeyEntered(true);
             setAllSearchResults(tasks.filter((item)=>{
             return item.taskName.toLowerCase().includes(enteredSearchKey.toLowerCase());
         }))
-        if(allSearchResults.length === 0){
-            toast.warning("Please enter a valid task name", {position: toast.POSITION.RIGHT})
+        if((allSearchResults.length === 0) && (isSearchKeyEntered === true)){
+            toast.warning("No matching results !!", {position: toast.POSITION.RIGHT})
         }
         }
     }
@@ -69,8 +75,8 @@ const Search = () => {
             {(allSearchResults.length !== 0) ?
             (allSearchResults.map((task)=>{ 
 
-                    const time1 = task.time.split(" ");
-                    const time = time1[1] + " " + time1[0];
+                    const deadline1 = task.deadline.split("-");
+                    const deadline = deadline1[2] + "-" + deadline1[1] + "-" + deadline1[0];
 
                     let taskClassName;
                     let taskState;
@@ -102,10 +108,14 @@ const Search = () => {
                         <h1 className="taskTimeOnSearchPage">{taskState}</h1>
                         <div className="taskTimeOnSearchPage">
                         <BiTimeFive/>
-                        <h1>{time}</h1>
+                        <h1>{deadline}</h1>
                         </div>
                     </div>)
                 }))
+                :
+                ((allSearchResults.length === 0) && (isSearchKeyEntered === true))
+                ?
+                <p className="alertText">No matching results !!</p>
                 :
                 <p className="alertText">Enter the task name in search dialog to catch the one you are looking for !!</p>}
             </div>

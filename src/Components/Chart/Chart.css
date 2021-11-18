@@ -1,5 +1,5 @@
 .alertText{
-    @apply text-center mt-10 md:mt-28 font-semibold md:text-lg
+    @apply text-center mt-10 md:mt-20 font-semibold md:text-lg mx-auto
 }
 .chart{
     @apply mx-auto
