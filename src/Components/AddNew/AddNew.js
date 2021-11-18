@@ -9,7 +9,7 @@ import './AddNew.css';
 
 const AddNew = () => {
 
-    const {user, refState, refPriority, refTaskName, refComments} = useContext(ValuesContext);
+    const {user, refState, refPriority, refTaskName, refComments, refDeadline} = useContext(ValuesContext);
 
     const history = useHistory();
 
@@ -19,6 +19,7 @@ const AddNew = () => {
         const priority = refPriority.current.value;
         const taskName = refTaskName.current.value;
         const comments = refComments.current.value;
+        const deadline1 = refDeadline.current.value;
         if(state === "null"){
             toast.warning("Please select a state of your task", {position: toast.POSITION.RIGHT});
         }
@@ -29,11 +30,14 @@ const AddNew = () => {
             toast.warning(`Please don't start your task name with "SPACE".`, {position: toast.POSITION.RIGHT});
         }
         else{
+            const deadline2 = deadline1.split("-");
+            const deadline = deadline2[0]+"-"+deadline2[1]+"-"+deadline2[2];
             db.collection('userTasks').doc(auth.currentUser.uid).collection('tasks').add({
                 state,
                 priority,
                 taskName,
                 comments,
+                deadline,
                 time: (new Date()).getTime().toString(),
             })
             history.push("/");
@@ -69,9 +73,14 @@ const AddNew = () => {
                 </select>
                 </div>
                 <div className="inputFieldForm">
-                <label htmlFor="title" className="titleFieldLabel">Task* &nbsp;</label>
+                <label htmlFor="title" className="titleFieldLabel">Task*</label>
                 <input required type="text" id="title" className="fieldInput" ref=
                 {refTaskName} placeholder="Enter the task name..."/>
+                </div>
+                <div className="inputFieldForm">
+                <label htmlFor="deadline" className="deadlineFieldLabel">Deadline*</label>
+                <input required type="Date" id="deadline" className="fieldInput" ref=
+                {refDeadline}/>
                 </div>
                 <div className="inputFieldForm">
                 <label htmlFor="description" className="descriptionFieldLabel">Comments &nbsp;</label>

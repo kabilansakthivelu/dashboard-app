@@ -16,6 +16,9 @@
 .descriptionFieldLabel{
     @apply text-black md:pr-8 mb-5 font-semibold 
 }
+.deadlineFieldLabel{
+    @apply text-black md:pr-12 font-semibold 
+}
 .fieldInput{
     @apply border-2 border-gray-400 rounded-md w-11/12 md:w-9/12 h-10 pl-2 mb-1 mt-2
 }

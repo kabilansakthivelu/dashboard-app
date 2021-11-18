@@ -9,7 +9,7 @@ import './ViewTask.css';
 
 const ViewTask = () => {
 
-    const {user, tasks, refState, refPriority, refTaskName, refComments} = useContext(ValuesContext);
+    const {user, tasks, refState, refPriority, refTaskName, refComments, refDeadline} = useContext(ValuesContext);
 
     const history = useHistory();
 
@@ -25,6 +25,7 @@ const ViewTask = () => {
             refPriority.current.value = obj.priority;
             refTaskName.current.value = obj.taskName;
             refComments.current.value = obj.comments;
+            refDeadline.current.value = obj.deadline;
             }
     },[obj])
 
@@ -34,6 +35,7 @@ const ViewTask = () => {
         const priority = refPriority.current.value;
         const taskName = refTaskName.current.value;
         const comments = refComments.current.value;
+        const deadline = refDeadline.current.value;
         if(state === "null"){
             toast.warning("Please select a state of your task", {position: toast.POSITION.RIGHT});
         }
@@ -49,6 +51,7 @@ const ViewTask = () => {
                 priority,
                 taskName,
                 comments,
+                deadline,
                 time: (new Date()).getTime().toString(),
             })
             history.push("/");
@@ -94,9 +97,15 @@ const ViewTask = () => {
                 </div>
 
                 <div className="inputFieldForm">
-                <label htmlFor="title" className="titleFieldLabel">Task* &nbsp;</label>
+                <label htmlFor="title" className="titleFieldLabel">Task*</label>
                 <input required type="text" id="title" className="fieldInput" ref=
                 {refTaskName} placeholder="Enter the task name..."/>
+                </div>
+
+                <div className="inputFieldForm">
+                <label htmlFor="deadline" className="deadlineFieldLabel">Deadline*</label>
+                <input required type="Date" id="deadline" className="fieldInput" ref=
+                {refDeadline}/>
                 </div>
 
                 <div className="inputFieldForm">

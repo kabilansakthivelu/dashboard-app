@@ -21,6 +21,7 @@ function App() {
   const refPriority = useRef();
   const refTaskName = useRef();
   const refComments = useRef();
+  const refDeadline = useRef();
   const [user] = useAuthState(auth);
   const [tasks, setTasks] = useState([]);
 
@@ -51,6 +52,7 @@ function App() {
           state: doc.data().state,
           priority: doc.data().priority,
           taskName: doc.data().taskName,
+          deadline: doc.data().deadline,
           comments: doc.data().comments,
           time,
         }
@@ -75,7 +77,7 @@ function App() {
 
   return (
     <Router>
-      <ValuesContext.Provider value={{emailRef, passwordRef, user, tasks, nextUpTasks, inProgressTasks, completedTasks, refComments, refTaskName, refPriority, refState}}>
+      <ValuesContext.Provider value={{emailRef, passwordRef, user, tasks, nextUpTasks, inProgressTasks, completedTasks, refComments, refTaskName, refPriority, refState, refDeadline}}>
       <Switch>
         <Route path="/signin">
           <SignIn />
