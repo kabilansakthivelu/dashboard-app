@@ -51,7 +51,7 @@ const Search = () => {
             return item.taskName.toLowerCase().includes(enteredSearchKey.toLowerCase());
         }))
         if((allSearchResults.length === 0) && (isSearchKeyEntered === true)){
-            toast.warning("No matching results !!", {position: toast.POSITION.RIGHT})
+            toast.error("No matching results !!", {position: toast.POSITION.RIGHT})
         }
         }
     }

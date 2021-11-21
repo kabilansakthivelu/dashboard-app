@@ -11,7 +11,7 @@
     @apply md:text-xl font-semibold mt-6
 }
 .boardSection{
-    @apply flex  space-x-1 lg:space-x-7 mt-4
+    @apply flex space-x-1 lg:space-x-7 mt-4
 }
 .individualBoard{
     @apply bg-gray-200 w-full rounded-md min-h-screen
@@ -41,7 +41,7 @@
     @apply lg:absolute lg:right-2 lg:bottom-4 capitalize text-xs xl:text-sm px-1 py-1 w-max rounded-md lg:px-2 lg:py-1 mr-2 bg-red-500 text-white mt-2 lg:mt-0
 }
 .taskTitle{
-    @apply font-semibold mb-2 text-sm md:text-base capitalize
+    @apply font-semibold mb-2 text-sm md:text-base
 }
 .taskComments{
     @apply mb-2 text-sm md:text-base
@@ -50,5 +50,5 @@
     @apply flex items-center space-x-1 text-xs xl:text-sm px-1 py-1 w-max rounded-md bg-gray-300 md:px-2 md:py-1 mt-4
 }
 .addTaskButton{
-    @apply flex items-center gap-x-1 md:gap-x-2 mx-auto bg-white p-1 md:p-3 mt-5 md:mt-10 font-semibold text-xs md:text-base rounded-md md:rounded-lg hover:bg-gray-500 hover:border-white hover:text-white
+    @apply flex items-center gap-x-1 md:gap-x-2 mx-auto bg-white p-1 md:p-3 my-5 md:my-10 font-semibold text-xs md:text-base rounded-md md:rounded-lg hover:bg-gray-500 hover:border-white hover:text-white
 }
